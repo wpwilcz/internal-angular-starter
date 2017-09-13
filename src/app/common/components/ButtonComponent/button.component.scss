@@ -1,0 +1,27 @@
+@import '~@common/styles/variables';
+
+.myTestButtonClass {
+  background-color: $button-background;
+
+  display: inline-block;
+  cursor: pointer;
+
+  color: white;
+  text-transform: uppercase;
+
+  padding: 10px 20px;
+
+  user-select: none;
+
+  border-radius: 10px;
+
+  transition: box-shadow 0.05s linear;
+
+  &:hover {
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,0.35);
+  }
+
+  &:active {
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.55);
+  }
+}
