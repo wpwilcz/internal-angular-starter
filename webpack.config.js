@@ -11,7 +11,7 @@ const cssnano = require('cssnano');
 const { NoEmitOnErrorsPlugin, SourceMapDevToolPlugin, NamedModulesPlugin } = require('webpack');
 const { NamedLazyChunksWebpackPlugin, BaseHrefWebpackPlugin } = require('@angular/cli/plugins/webpack');
 const { CommonsChunkPlugin } = require('webpack').optimize;
-const { AotPlugin } = require('@ngtools/webpack');
+const { AngularCompilerPlugin } = require('@ngtools/webpack');
 
 const nodeModules = path.join(process.cwd(), 'node_modules');
 const realNodeModules = fs.realpathSync(nodeModules);
@@ -72,6 +72,28 @@ const getHostReplacementPaths = (ENV) => {
 }
 
 const getPlugins = (ENV) => {
+  var angularCompilerConfig;
+  if (isProduction(ENV)) {
+    angularCompilerConfig = {
+      "mainPath": "main.ts",
+      "replaceExport": false,
+      "hostReplacementPaths": getHostReplacementPaths(ENV),
+      "exclude": [],
+      "tsConfigPath": "src/tsconfig.app.json",
+      "skipCodeGeneration": true,
+      "sourceMap": true
+    };
+  } else {
+    angularCompilerConfig = {
+      "mainPath": "main.ts",
+      "replaceExport": false,
+      "hostReplacementPaths": getHostReplacementPaths(ENV),
+      "exclude": [],
+      "tsConfigPath": "src/tsconfig.app.json",
+      "skipCodeGeneration": true
+    };
+  }
+
   const basePlugins = [
     new NoEmitOnErrorsPlugin(),
     new CopyWebpackPlugin([
@@ -104,7 +126,7 @@ const getPlugins = (ENV) => {
     }),
     new NamedLazyChunksWebpackPlugin(),
     new HtmlWebpackPlugin({
-      "template": "./src/index.html",
+      "template": "./src/index.handlebars",
       "filename": "./index.html",
       "hash": false,
       "inject": true,
@@ -115,7 +137,7 @@ const getPlugins = (ENV) => {
       "showErrors": true,
       "chunks": "all",
       "excludeChunks": [],
-      "title": "Webpack App",
+      "title": "SoftwareHut TestApp",
       "xhtml": true,
       "chunksSortMode": function sort(left, right) {
         let leftIndex = entryPoints.indexOf(left.names[0]);
@@ -166,14 +188,7 @@ const getPlugins = (ENV) => {
       "async": "common"
     }),
     new NamedModulesPlugin({}),
-    new AotPlugin({
-      "mainPath": "main.ts",
-      "replaceExport": false,
-      "hostReplacementPaths": getHostReplacementPaths(ENV),
-      "exclude": [],
-      "tsConfigPath": "src/tsconfig.app.json",
-      "skipCodeGeneration": true
-    })
+    new AngularCompilerPlugin(angularCompilerConfig)
   ];
   return basePlugins;
 };
@@ -191,6 +206,13 @@ const getRules = () => {
     {
       "test": /\.html$/,
       "loader": "raw-loader"
+    },
+    {
+      "test": /\.handlebars/,
+      "loader": "handlebars-loader",
+      "exclude": [
+        /(\\|\/)node_modules(\\|\/)/
+      ]
     },
     {
       "test": /\.(eot|svg|cur)$/,

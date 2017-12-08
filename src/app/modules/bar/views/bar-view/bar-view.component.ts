@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  templateUrl: './barView.component.html',
-  styleUrls: ['./barView.component.scss']
+  templateUrl: './bar-view.component.html',
+  styleUrls: ['./bar-view.component.scss']
 })
 export class BarViewComponent {
   id: any;

@@ -1,21 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {barRoutingComponents, BarRoutingModule} from '@modules/bar/bar.routing.module';
+import {SharedModule} from '../../shared.module';
 
-import { BarViewComponent } from './views/barView/barView.component';
-
-const heroesRoutes: Routes = [
-  { path: 'bar/:id',  component: BarViewComponent },
-];
 
 @NgModule({
   declarations: [
-    BarViewComponent,
+    barRoutingComponents
   ],
   imports: [
-    RouterModule.forChild(heroesRoutes)
+    BarRoutingModule,
+    SharedModule
   ],
-  exports: [
-    RouterModule,
-  ]
+  exports: []
 })
-export class BarModule { }
+export class BarModule {
+}
