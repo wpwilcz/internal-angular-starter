@@ -80,8 +80,7 @@ const getPlugins = (ENV) => {
       "hostReplacementPaths": getHostReplacementPaths(ENV),
       "exclude": [],
       "tsConfigPath": "src/tsconfig.app.json",
-      "skipCodeGeneration": true,
-      "sourceMap": true
+      "skipCodeGeneration": true
     };
   } else {
     angularCompilerConfig = {
@@ -90,7 +89,8 @@ const getPlugins = (ENV) => {
       "hostReplacementPaths": getHostReplacementPaths(ENV),
       "exclude": [],
       "tsConfigPath": "src/tsconfig.app.json",
-      "skipCodeGeneration": true
+      "skipCodeGeneration": true,
+      "sourceMap": true
     };
   }
 
