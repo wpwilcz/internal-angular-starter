@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {TestService} from '../../../../common/services/test-service/test-service';
 
-import { TestService } from '@common/services/test-service/test-service';
 
 @Component({
   templateUrl: './foo-view.component.html',

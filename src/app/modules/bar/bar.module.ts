@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
-import {barRoutingComponents, BarRoutingModule} from '@modules/bar/bar.routing.module';
 import {SharedModule} from '../../shared.module';
+import {barRoutingComponents, BarRoutingModule} from './bar.routing.module';
 
 
 @NgModule({

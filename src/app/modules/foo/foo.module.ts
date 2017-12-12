@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
-import {fooRoutingComponents, FooRoutingModule} from '@modules/foo/foo.routing.module';
 import {SharedModule} from '../../shared.module';
+import {fooRoutingComponents, FooRoutingModule} from './foo.routing.module';
 
 
 @NgModule({

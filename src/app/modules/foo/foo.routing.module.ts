@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FooViewComponent} from '@modules/foo/views/foo-view/foo-view.component';
+import {FooViewComponent} from './views/foo-view/foo-view.component';
 
 const fooRoutes: Routes = [
   {path: '', component: FooViewComponent},

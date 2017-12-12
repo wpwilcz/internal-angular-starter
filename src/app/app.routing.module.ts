@@ -1,8 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-
-
-import {environment} from '../environments/environment.dev';
+import {environment} from '../environments/environment';
 
 const appRoutes: Routes = [
   {path: 'foo', loadChildren: 'app/modules/foo/foo.module#FooModule'},

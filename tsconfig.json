@@ -1,19 +1,13 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "CommonJS",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "paths": {
-      "@common/*": ["src/app/common/*"],
-      "@modules/*": ["src/app/modules/*"]
-    },
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -21,9 +15,5 @@
       "es2017",
       "dom"
     ]
-  },
-  "angularCompilerOptions": {
-    "strictMetadataEmit": true,
-    "genDir": "tmp"
   }
 }

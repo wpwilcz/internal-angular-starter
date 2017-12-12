@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
+import {TestService} from './test-service/test-service';
 
-import { TestService } from '@common/services/test-service/test-service';
 
 @NgModule({
   providers: [

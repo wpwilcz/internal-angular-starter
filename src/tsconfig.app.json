@@ -3,12 +3,8 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
-    "module": "CommonJS",
-    "types": [],
-    "paths": {
-      "@common/*": ["app/common/*"],
-      "@modules/*": ["app/modules/*"]
-    }
+    "module": "es2015",
+    "types": []
   },
   "exclude": [
     "test.ts",
