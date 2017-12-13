@@ -8,7 +8,8 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false --quiet",
     "build": "webpack -p --config webpack.prod.js",
     "start": "webpack-dev-server --port=4200 --config webpack.dev.js",
-    "test": "karma start ./karma.conf.js",
+    "test": "jest --watch=false --coverage",
+    "test:watch": "jest --watch --coverage",
     "e2e": "protractor ./protractor.conf.js"
   },
   "private": true,
@@ -22,9 +23,13 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "@types/jest": "^21.1.8",
     "classlist.js": "^1.1.20150312",
     "core-js": "^2.4.1",
     "handlebars-loader": "^1.6.0",
+    "jest": "^21.2.1",
+    "jest-preset-angular": "^4.0.2",
+    "jest-zone-patch": "0.0.8",
     "lodash": "^4.17.4",
     "rxjs": "^5.5.2",
     "web-animations-js": "^2.3.1",
@@ -73,5 +78,9 @@
     "webpack-concat-plugin": "1.4.0",
     "webpack-dev-server": "~2.9.3",
     "webpack-merge": "^4.1.1"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
   }
 }

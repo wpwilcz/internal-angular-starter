@@ -6,6 +6,5 @@ import {Component} from '@angular/core';
 export class NotFoundComponent {
 
   constructor() {
-    console.warn('404 activate');
   }
 }

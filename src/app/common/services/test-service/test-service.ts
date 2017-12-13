@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 @Injectable()
 export class TestService {
-  getData() {
-    return 123;
+  data = 123;
+
+  getData(): number {
+    return this.data;
   }
 }
