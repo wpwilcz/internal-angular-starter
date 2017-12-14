@@ -10,10 +10,10 @@ module.exports = merge(common, {
       "mainPath": "main.ts",
       "platform": 0,
       "hostReplacementPaths": {
-        "environments\\environment.ts": "environments\\environment.prod.ts"
+        "environments/environment.ts": "environments/environment.prod.ts"
       },
       "sourceMap": true,
-      "tsConfigPath": "src\\tsconfig.app.json",
+      "tsConfigPath": "src/tsconfig.app.json",
       "compilerOptions": {}
     })
   ]
