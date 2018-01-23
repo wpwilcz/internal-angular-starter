@@ -1,21 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {SharedModule} from '../../shared.module';
+import {fooRoutingComponents, FooRoutingModule} from './foo.routing.module';
 
-import { FooViewComponent } from './views/fooView/fooView.component';
-
-const heroesRoutes: Routes = [
-  { path: 'foo',  component: FooViewComponent },
-];
 
 @NgModule({
   declarations: [
-    FooViewComponent,
+    fooRoutingComponents
   ],
   imports: [
-    RouterModule.forChild(heroesRoutes)
+    FooRoutingModule,
+    SharedModule
   ],
-  exports: [
-    RouterModule,
-  ]
+  exports: []
 })
-export class FooModule { }
+export class FooModule {
+}
