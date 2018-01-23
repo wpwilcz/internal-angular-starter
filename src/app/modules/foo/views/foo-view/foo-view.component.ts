@@ -8,6 +8,7 @@ import {TestService} from '../../../../common/services/test-service/test-service
 })
 export class FooViewComponent {
   data: any;
+  public checked: true;
 
   constructor(private testService: TestService) {
     this.data = this.testService.getData();

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../../shared.module';
 import {fooRoutingComponents, FooRoutingModule} from './foo.routing.module';
+import {CommonModule} from '@angular/common';
 
 
 @NgModule({
@@ -8,8 +9,9 @@ import {fooRoutingComponents, FooRoutingModule} from './foo.routing.module';
     fooRoutingComponents
   ],
   imports: [
+    CommonModule,
     FooRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   exports: []
 })
