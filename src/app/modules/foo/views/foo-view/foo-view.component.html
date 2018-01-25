@@ -1,1 +1,16 @@
-<input appAuMask>
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="userData">
+    <input formControlName="username">
+    <span
+      *ngIf="signupForm.get('userData.username').errors['nameIsForbidden'] && signupForm.get('userData.username').touched"
+      class="help-block"
+    >Name is forbidden</span>
+    <input formControlName="email">
+    <span
+      *ngIf="signupForm.get('userData.email').invalid && signupForm.get('userData.username').touched"
+      class="help-block"
+    >Please enter a valid email</span>
+  </div>
+  <input formControlName="gender">
+  <input type="submit">
+</form>
